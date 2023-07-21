@@ -1,5 +1,5 @@
 alg_name: "ROME"
-model_name: "./hugging_cache/gpt2-xl"
+model_name: "gpt2-xl"
 device: 0
 layers: [17]
 fact_token: "subject_last"

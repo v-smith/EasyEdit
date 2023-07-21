@@ -49,8 +49,6 @@ class BaseEditor:
 
         assert hparams is not None or print('Error: hparams is None.')
 
-
-
         self.model_name = hparams.model_name
         self.apply_algo = ALG_DICT[hparams.alg_name]
         self.alg_name = hparams.alg_name

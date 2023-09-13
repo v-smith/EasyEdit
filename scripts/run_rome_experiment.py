@@ -3,10 +3,11 @@ from easyeditor import ROMEHyperParams
 from transformers import GPT2Tokenizer
 from transformers import GPT2LMHeadModel
 
+
 prompts = ['Ray Charles, the',
-            'Grant Hill is a professional',
-            'The law in Ikaalinen declares the language'
-            ]
+           'Grant Hill is a professional',
+           'The law in Ikaalinen declares the language'
+           ]
 ground_truth = ['piano',
                 'basketball',
                 'Finnish'
@@ -16,11 +17,11 @@ target_new = ['violin',
               'Swedish'
               ]
 subject = ['Ray Charles',
-            'Grant Hill',
-            'Ikaalinen'
-            ]
+           'Grant Hill',
+           'Ikaalinen'
+           ]
 
-hparams = ROMEHyperParams.from_hparams('./hparams/ROME/gpt2-xl')
+hparams = ROMEHyperParams.from_hparams('../hparams/ROME/gpt2-xl')
 editor = BaseEditor.from_hparams(hparams)
 metrics, edited_model, _ = editor.edit(
     prompts=prompts,
@@ -31,11 +32,11 @@ metrics, edited_model, _ = editor.edit(
 )
 
 print(metrics)
-print('*'*20)
+print('*' * 20)
 
 tokenizer = GPT2Tokenizer.from_pretrained('./hugging_cache/gpt2-xl')
 tokenizer.pad_token_id = tokenizer.eos_token_id
-tokenizer.padding_side='left'
+tokenizer.padding_side = 'left'
 generation_prompts = [
     "Ray Charles, the",
     "The law in Ikaalinen declares the language"

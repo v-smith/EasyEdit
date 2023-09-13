@@ -21,7 +21,7 @@ subject = ['Ray Charles',
            'Ikaalinen'
            ]
 
-hparams = ROMEHyperParams.from_hparams('../hparams/ROME/gpt2-xl')
+hparams = ROMEHyperParams.from_hparams('hparams/ROME/gpt2-xl')
 editor = BaseEditor.from_hparams(hparams)
 metrics, edited_model, _ = editor.edit(
     prompts=prompts,
